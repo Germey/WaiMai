@@ -1,3 +1,36 @@
+body {
+  font-family: "Microsoft Yahei";
+}
 .content {
   margin-top: 50px;
+}
+#product-list .product-item .describe {
+  font-size: 20px;
+  color: #f06e81;
+}
+#product-list .product-item .describe .unit,
+#product-list .product-item .describe .every {
+  color: #666666;
+  font-size: 12px;
+}
+#product-list .product-item .describe .every {
+  margin: 0 -3px;
+}
+#product-list .bought-items .item {
+  padding: 10px 20px;
+  color: #666666;
+}
+#product-list .bought-items .item .price-info {
+  color: #f06e81;
+  font-size: 16px;
+}
+#product-list .bought-items .options {
+  padding: 10px 20px;
+}
+#product-list .bought-items .options .total-price {
+  font-size: 16px;
+  color: #f06e81;
+}
+#product-list .bought-items .options .ui-btn {
+  width: 100%;
 }

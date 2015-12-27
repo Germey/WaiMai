@@ -22,9 +22,10 @@ $(function() {
                     node.find('.number').text(now_num);
                     node.find('.price').text(parseFloat(product.find('.price').text()) * now_num);
                 } else {
-                    node = $('#template').clone().removeAttr('id');
+                    node = $('#template').clone().removeAttr('id').removeClass('hidden');
                     node.find('.name').text(product.find('.name').text());
                     node.find('.price').text(product.find('.price').text());
+                    node.find('.unit').text(product.find('.unit').text());
                     node.find('.number').text(1);
                     node.attr('index', index);
                     node.prependTo($('.bought-items'));
@@ -38,7 +39,7 @@ $(function() {
             $.each($('.bought-items .item'), function() {
                 total += parseFloat($(this).find('.price').text());
             });
-            $('.bought-items .total').text(total);
+            $('.bought-items .total-price').find('.total').text(total);
         }
         $('#product-list').on('click', '.add', function() {
             handle($(this), 'add');

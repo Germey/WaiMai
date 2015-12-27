@@ -1,3 +1,45 @@
+@red: #F06E81;
+@a-fist-rank: #333;
+@a-second-rank: #666;
+@a-third-rank: #999;
+body {
+    font-family: "Microsoft Yahei";
+}
 .content {
     margin-top: 50px;
+}
+#product-list {
+    .product-item {
+        .describe {
+            font-size: 20px;
+            color: @red;
+            .unit,.every {
+                color: @a-second-rank;
+                font-size: 12px;
+            }
+            .every {
+                margin: 0 -3px;
+            }
+        }
+    }
+    .bought-items {
+        .item {
+            padding: 10px 20px;
+            color: @a-second-rank;
+            .price-info {
+                color: @red;
+                font-size: 16px;
+            }
+        }
+        .options {
+            padding: 10px 20px;
+            .total-price {
+                font-size: 16px;
+                color: @red;
+            }
+            .ui-btn {
+                width: 100%;
+            }
+        }
+    }
 }

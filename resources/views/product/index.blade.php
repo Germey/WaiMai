@@ -15,17 +15,34 @@
 
                         <p class="ui-nowrap detail">{{ $product->detail }}</p>
 
-                        <p class="price">{{ $product->price }}</p>
-
-                        <div><i class="icon-angle-left minus"></i><span class="choose-num">0</span><i
-                                    class="icon-angle-right add"></i></div>
+                        <div class="ui-row-flex">
+                            <div class="ui-col ui-col-3">
+                                <p class="describe">
+                                    <i class="fa fa-cny"></i>
+                                    <span class="price">{{ $product->price }}</span>
+                                    <span class="every">/</span>
+                                    <span class="unit">{{ $product->unit }}</span>
+                                </p></div>
+                            <div class="ui-col ui-col-1">
+                                <div>
+                                    <i class="fa fa-minus-square-o minus"></i>
+                                    <span class="choose-num">0</span>
+                                    <i class="fa fa-plus-square-o add"></i>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </li>
             @endforeach
         </ul>
         <div class="ui-list bought-items">
             <div class="ui-row-flex options">
-                <div class="ui-col ui-col-3 total"></div>
+                <div class="ui-col ui-col-3 total">
+                    <div class="total-price">
+                        <i class="fa fa-cny"></i>
+                        <span class="total">0</span>
+                    </div>
+                </div>
                 <div class="ui-col ui-col-2 submit">
                     <button class="ui-btn ui-btn-danger">
                         确定
@@ -33,10 +50,10 @@
                 </div>
             </div>
         </div>
-        <div class="ui-row-flex ui-whitespace item" id="template">
-            <div class="ui-col ui-col-3 name"></div>
-            <div class="ui-col ui-col-1 price"></div>
-            <div class="ui-col ui-col-2 number"></div>
+        <div class="ui-row-flex ui-whitespace item hidden" id="template">
+            <div class="ui-col ui-col-4 name"></div>
+            <div class="ui-col ui-col-1 price-info"><i class="fa fa-cny"></i><span class="price"></span></div>
+            <div class="ui-col ui-col-1"><span class="number"></span><span class="unit"></span></div>
         </div>
     </div>
 @endsection
