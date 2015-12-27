@@ -1,8 +1,17 @@
 body {
   font-family: "Microsoft Yahei";
 }
-.content {
+.ui-tiled {
+  padding-top: 8px;
+  color: #333333;
+  font-size: 14px;
+}
+.ui-tiled li.active {
+  color: royalblue;
+}
+#product-list {
   margin-top: 50px;
+  margin-bottom: 60px;
 }
 #product-list .product-item .describe {
   font-size: 20px;
@@ -22,15 +31,49 @@ body {
 }
 #product-list .bought-items .item .price-info {
   color: #f06e81;
-  font-size: 16px;
+  font-size: 14px;
+}
+#product-list .bought-items .item .number-info {
+  font-size: 14px;
+  line-height: 20px;
 }
 #product-list .bought-items .options {
   padding: 10px 20px;
 }
 #product-list .bought-items .options .total-price {
-  font-size: 16px;
+  font-size: 14px;
   color: #f06e81;
+}
+#product-list .bought-items .options .total-price .price {
+  margin-left: 3px;
 }
 #product-list .bought-items .options .ui-btn {
   width: 100%;
+}
+::-webkit-scrollbar {
+  width: 3px;
+  padding-right: 5px;
+}
+::-webkit-scrollbar:horizontal {
+  height: 20px;
+  margin-bottom: 2px;
+}
+::-webkit-scrollbar-track {
+  border-radius: 2px;
+  height: 20px;
+}
+::-webkit-scrollbar-track-piece {
+  border-radius: 2px;
+}
+::-webkit-scrollbar-thumb {
+  width: 5px;
+  height: 20px;
+  top: 100px;
+  border-radius: 2px;
+  background: rgba(200, 200, 200, 0.6);
+  opacity: 0.6;
+}
+::-webkit-scrollbar-thumb:hover {
+  height: 20px;
+  background: rgba(200, 200, 200, 0.2);
 }

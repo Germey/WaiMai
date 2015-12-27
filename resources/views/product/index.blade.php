@@ -53,7 +53,7 @@
         <div class="ui-row-flex ui-whitespace item hidden" id="template">
             <div class="ui-col ui-col-4 name"></div>
             <div class="ui-col ui-col-1 price-info"><i class="fa fa-cny"></i><span class="price"></span></div>
-            <div class="ui-col ui-col-1"><span class="number"></span><span class="unit"></span></div>
+            <div class="ui-col ui-col-1 number-info"><span class="number"></span><span class="unit"></span></div>
         </div>
     </div>
 @endsection

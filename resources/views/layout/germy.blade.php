@@ -22,17 +22,17 @@
 </div>
 <footer class="ui-footer ui-footer-stable ui-border-t">
     <ul class="ui-tiled">
-        <li>
-            <div>菜单</div>
-            <i>1</i>
+        <li class="active">
+            <div><i class="fa fa-book"></i></div>
+            <i>菜单</i>
         </li>
         <li>
-            <div>菜单</div>
-            <i>2</i>
+            <div><i class="fa fa-file-text-o"></i></div>
+            <i>订单</i>
         </li>
         <li>
-            <div>菜单</div>
-            <i>3</i>
+            <div><i class="fa fa-user"></i></div>
+            <i>我的</i>
         </li>
     </ul>
 </footer>
