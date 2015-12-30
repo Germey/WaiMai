@@ -1,6 +1,9 @@
 body {
   font-family: "Microsoft Yahei";
 }
+.hidden {
+  display: none;
+}
 .ui-tiled {
   padding-top: 8px;
   color: #333333;
@@ -9,7 +12,12 @@ body {
 .ui-tiled li.active {
   color: royalblue;
 }
-#product-list {
+a:hover {
+  color: white;
+  text-decoration: none;
+  cursor: pointer;
+}
+.content {
   margin-top: 50px;
   margin-bottom: 60px;
 }

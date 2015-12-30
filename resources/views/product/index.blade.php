@@ -36,6 +36,7 @@
             @endforeach
         </ul>
         <div class="ui-list bought-items">
+            {!! Form::open(['url' => url('/order/preview'), 'role' => 'form', 'id' => 'order-form']) !!}
             <div class="ui-row-flex options">
                 <div class="ui-col ui-col-3 total">
                     <div class="total-price">
@@ -44,11 +45,15 @@
                     </div>
                 </div>
                 <div class="ui-col ui-col-2 submit">
-                    <button class="ui-btn ui-btn-danger">
+                    <a class="ui-btn ui-btn-danger">
                         确定
-                    </button>
+                    </a>
                 </div>
             </div>
+            <div id="order-info">
+
+            </div>
+            {!! Form::close() !!}
         </div>
         <div class="ui-row-flex ui-whitespace item hidden" id="template">
             <div class="ui-col ui-col-4 name"></div>

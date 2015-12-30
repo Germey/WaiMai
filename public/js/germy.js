@@ -41,11 +41,36 @@ $(function() {
             });
             $('.bought-items .total-price').find('.total').text(total);
         }
+
         $('#product-list').on('click', '.add', function() {
             handle($(this), 'add');
         });
         $('#product-list').on('click', '.minus', function() {
             handle($(this), 'minus');
+        });
+        $('.bought-items').on('click', '.submit', function() {
+            $('#order-info').html('');
+            $.each($('.bought-items .item'), function(index) {
+                $('<input>').attr({
+                    'type': 'hidden',
+                    'name': 'order[' + index + '][index]',
+                    'value': $(this).attr('index'),
+                }).appendTo('#order-info');
+                $('<input>').attr({
+                    'type': 'hidden',
+                    'name': 'order[' + index + '][number]',
+                    'value': $(this).find('.number').text(),
+                }).appendTo('#order-info');
+                if (index == $('.bought-items .item').length - 1) {
+                    $('#order-form').submit();
+                }
+            });
+        });
+    }
+
+    if ($('#order-preview').length > 0) {
+        $('#order-preview').on('click', '.ui-icon-close', function() {
+           $(this).siblings('input').val('');
         });
     }
 });
