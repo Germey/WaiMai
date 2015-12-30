@@ -58,6 +58,52 @@ a:hover {
 #product-list .bought-items .options .ui-btn {
   width: 100%;
 }
+#order-preview .bought-items .item {
+  padding: 10px 20px;
+  color: #666666;
+}
+#order-preview .bought-items .item .name {
+  font-size: 12px;
+}
+#order-preview .bought-items .item .price-info {
+  font-size: 12px;
+  padding-left: 5px;
+}
+#order-preview .bought-items .item .number-info {
+  font-size: 12px;
+  line-height: 20px;
+}
+#order-preview .total-info {
+  padding: 10px 15px;
+  font-size: 12px;
+  background-color: white;
+}
+#order-preview .total-info .total {
+  font-size: 14px;
+}
+#order-preview .total-info .price-info {
+  color: #f06e81;
+  font-size: 13px;
+}
+#order-preview .total-info .number-info {
+  color: #f06e81;
+  font-size: 13px;
+}
+#order-preview #order-submit-form .ui-form-item {
+  font-size: 14px !important;
+}
+#order-preview #order-submit-form .ui-form-item label:not(.ui-switch):not(.ui-checkbox):not(.ui-checkbox-s):not(.ui-radio) {
+  width: 55px;
+}
+#order-preview #order-submit-form .ui-form-item-l input:not([type=checkbox]):not([type=radio]) {
+  padding-left: 75px;
+}
+#order-preview p.title {
+  padding: 10px;
+  font-size: 16px;
+  background-color: white;
+  color: #7cae23;
+}
 ::-webkit-scrollbar {
   width: 3px;
   padding-right: 5px;

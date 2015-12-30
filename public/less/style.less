@@ -2,7 +2,7 @@
 @a-fist-rank: #333;
 @a-second-rank: #666;
 @a-third-rank: #999;
-
+@green-title: #7CAE23;
 body {
     font-family: "Microsoft Yahei";
 }
@@ -74,6 +74,60 @@ a {
             }
         }
     }
+}
+
+#order-preview {
+    .bought-items {
+        .item {
+            padding: 10px 20px;
+            color: @a-second-rank;
+            .name {
+                font-size: 12px;
+            }
+            .price-info {
+                font-size: 12px;
+                padding-left: 5px;
+            }
+            .number-info {
+                font-size: 12px;
+                line-height: 20px;
+            }
+        }
+    }
+    .total-info {
+        padding: 10px 15px;
+        font-size: 12px;
+        background-color: white;
+        .total {
+            font-size: 14px;
+        }
+        .price-info {
+            color: @red;
+            font-size: 13px;
+        }
+        .number-info {
+            color: @red;
+            font-size: 13px;
+        }
+    }
+    #order-submit-form {
+        .ui-form-item {
+            font-size: 14px !important;
+        }
+        .ui-form-item label:not(.ui-switch):not(.ui-checkbox):not(.ui-checkbox-s):not(.ui-radio) {
+            width: 55px;
+        }
+        .ui-form-item-l input:not([type=checkbox]):not([type=radio]) {
+            padding-left: 75px;
+        }
+    }
+    p.title {
+        padding: 10px;
+        font-size: 16px;
+        background-color: white;
+        color: @green-title;
+    }
+
 }
 
 ::-webkit-scrollbar {
