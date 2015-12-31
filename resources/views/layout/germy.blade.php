@@ -37,6 +37,7 @@
 </footer>
 </body>
 <script src="/js/jquery.js"></script>
+<script src="/js/validation.js"></script>
 <script src="/js/zepto.min.js"></script>
 <script src="/js/frozen.js"></script>
 <script src="/js/germy.js"></script>

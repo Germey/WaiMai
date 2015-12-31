@@ -71,6 +71,22 @@ $(function() {
         $('#order-preview').on('click', '.ui-icon-close', function() {
             $(this).siblings('input').val('');
         });
+        $('#order-preview').on('click', '#submit', function() {
+            $('#order-submit-form').judgeInfo({
+                'name': ['required'],
+                'location': ['required'],
+                'street_number': ['required'],
+                'phone': ['phone'],
+            }, {
+                'name': '您的姓名',
+                'phone': '手机号',
+                'location': '地址',
+                'street_nubmer': '门牌号',
+            }, function() {
+                $('#order-submit-form').submit();
+                //console.log('no_error');
+            });
+        });
     }
     if ($('#map').length > 0) {
         var map = new BMap.Map("map");
