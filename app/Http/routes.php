@@ -21,7 +21,18 @@
     ]);
 
     Route::model('product', 'App\Model\Product');
-    Route::resource('product', 'ProductController');
+
+    Route::get('list', 'ProductController@lists');
 
     Route::resource('order', 'OrderController');
     Route::controller('order', 'OrderController');
+
+    /* 后台管理 */
+    Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function() {
+        Route::get('/', 'HomeController@index');
+        Route::resource('product', 'ProductController');
+
+    });
+
+    Route::post('ajaxUploadInfoImg', 'UploadController@ajaxUploadInfoImg');
+

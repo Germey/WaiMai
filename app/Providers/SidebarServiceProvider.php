@@ -82,31 +82,9 @@ class SidebarServiceProvider extends ServiceProvider {
     public function getMenuItems() {
         $this->menu_items = [
             ['path' => '', 'text' => '首页', 'icon' => 'signal'],
-            ['path' => 'article', 'text' => '文章管理', 'icon' => 'signal'],
-            ['path' => '', 'text' => '评论管理', 'icon' => 'signal'],
-            ['path' => '', 'text' => '目录管理', 'icon' => 'signal'],
-            ['path' => 'tag', 'text' => '标签管理', 'icon' => 'signal'],
-            [
-                'path' => 'media',
-                'text' => '媒体管理',
-                'icon' => 'th-list',
-                'children' => [
-                    ['path' => 'pic', 'text' => '图片', 'icon' => 'signal'],
-                    ['path' => '', 'text' => '视频', 'icon' => 'signal'],
-                    ['path' => '', 'text' => '音频', 'icon' => 'signal'],
-                    ['path' => '', 'text' => '文本', 'icon' => 'signal'],
-                ]
-            ],
-            ['path' => '', 'text' => '人员管理', 'icon' => 'signal'],
-            ['path' => '', 'text' => '图文管理', 'icon' => 'signal'],
-            ['path' => '', 'text' => '菜单管理', 'icon' => 'signal'],
-            ['path' => 'info', 'text' => '个人详情', 'icon' => 'signal'],
-            ['path' => '', 'text' => '我的发布', 'icon' => 'signal'],
-            ['path' => '', 'text' => '我的关注', 'icon' => 'signal'],
-            ['path' => '', 'text' => '我的收藏', 'icon' => 'signal'],
-            ['path' => '', 'text' => '站点信息', 'icon' => 'signal'],
-            ['path' => '', 'text' => '缓存管理', 'icon' => 'signal'],
-            ['path' => '', 'text' => '数据备份', 'icon' => 'signal'],
+            ['path' => 'product', 'text' => '商品管理', 'icon' => 'signal'],
+            ['path' => 'order', 'text' => '订单管理', 'icon' => 'signal'],
+            ['path' => 'category', 'text' => '目录管理', 'icon' => 'signal'],
 
         ];
         return $this->menu_items;

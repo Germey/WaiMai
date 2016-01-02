@@ -2,23 +2,23 @@
 <html>
 <head>
     <title>Germy CMS</title>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}" />
-    <link rel="stylesheet" href="{{ asset('css/bootstrap-responsive.min.css') }}" />
-    <link rel="stylesheet" href="{{ asset('css/fullcalendar.css') }}" />
-    <link rel="stylesheet" href="{{ asset('css/matrix-style.css') }}" />
-    <link rel="stylesheet" href="{{ asset('css/matrix-media.css') }}" />
-    <link rel="stylesheet" href="{{ asset('css/font-awesome.min.css') }}" />
-    <link rel="stylesheet" href="{{ asset('css/jquery.gritter.css') }}" />
-    <link rel="stylesheet" href="{{ asset('css/bootstrap-wysihtml5.css') }}" />
-    <link rel="stylesheet" href="{{ asset('css/select2.css') }}" />
-    <link rel="stylesheet" href="{{ asset('css/style.css') }}" />
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}"/>
+    <link rel="stylesheet" href="{{ asset('css/bootstrap-responsive.min.css') }}"/>
+    <link rel="stylesheet" href="{{ asset('css/fullcalendar.css') }}"/>
+    <link rel="stylesheet" href="{{ asset('css/matrix-style.css') }}"/>
+    <link rel="stylesheet" href="{{ asset('css/matrix-media.css') }}"/>
+    <link rel="stylesheet" href="{{ asset('css/font-awesome.min.css') }}"/>
+    <link rel="stylesheet" href="{{ asset('css/jquery.gritter.css') }}"/>
+    <link rel="stylesheet" href="{{ asset('css/bootstrap-wysihtml5.css') }}"/>
+    <link rel="stylesheet" href="{{ asset('css/select2.css') }}"/>
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}"/>
     <script src="{{ asset('js/jquery.js') }}"></script>
     <script src="{{ asset('js/jquery.ui.custom.js') }}"></script>
     <script src="{{ asset('js/matrix.js') }}"></script>
     <script src="{{ asset('js/bootstrap.min.js') }}"></script>
-    <script src="{{ asset('js/germy.admin.js') }}"></script>
+
 </head>
 <body>
 @include('admin.header')
@@ -55,6 +55,6 @@
     <script src="{{ asset('js/bootstrap-wysihtml5.js') }}"></script>
 
     -->
-
+<script src="{{ asset('js/germy.admin.js') }}"></script>
 
 </html>

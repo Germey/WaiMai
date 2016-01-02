@@ -1,64 +1,56 @@
-@extends('layout.germy')
+@extends('admin.content')
 
-@section('content')
-    <div id="product-list">
-        <ul class="ui-list ui-border-tb">
-            @foreach($products as $product)
-                <li class="ui-border-t product-item" id="product-{{ $product->id }}" index="{{ $product->id }}">
-                    <div class="ui-avatar">
-                        <a href="{{ url('/product/'.$product->id) }}">
-                            <span><img src="{{ $product->image }}"></span>
-                        </a>
-                    </div>
-                    <div class="ui-list-info">
-                        <h4 class="ui-nowrap name">{{ $product->name }}</h4>
-
-                        <p class="ui-nowrap detail">{{ $product->detail }}</p>
-
-                        <div class="ui-row-flex">
-                            <div class="ui-col ui-col-3">
-                                <p class="describe">
-                                    <i class="fa fa-cny"></i>
-                                    <span class="price">{{ $product->price }}</span>
-                                    <span class="every">/</span>
-                                    <span class="unit">{{ $product->unit }}</span>
-                                </p></div>
-                            <div class="ui-col ui-col-1">
-                                <div>
-                                    <i class="fa fa-minus-square-o minus"></i>
-                                    <span class="choose-num">0</span>
-                                    <i class="fa fa-plus-square-o add"></i>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </li>
-            @endforeach
-        </ul>
-        <div class="ui-list bought-items">
-            {!! Form::open(['url' => url('/order/preview'), 'role' => 'form', 'id' => 'order-form']) !!}
-            <div class="ui-row-flex options">
-                <div class="ui-col ui-col-3 total">
-                    <div class="total-price">
-                        <i class="fa fa-cny"></i>
-                        <span class="total">0</span>
-                    </div>
-                </div>
-                <div class="ui-col ui-col-2 submit">
-                    <a class="ui-btn ui-btn-danger">
-                        确定
-                    </a>
-                </div>
+@section('main')
+    <div class="main">
+        <div class="widget-box">
+            <div class="widget-title">
+			<span class="icon">
+				<input type="checkbox" id="title-checkbox" name="title-checkbox"/>
+			</span>
+                <h5><a href="{{ URL('admin/product/create')}}" class="btn btn-mini btn-primary">增加菜品</a></h5>
             </div>
-            <div id="order-info">
+            <div class="widget-content nopadding">
+                <table class="table table-bordered table-striped with-check">
+                    <thead>
+                    <tr>
+                        <th><input type="checkbox"/></th>
+                        <th>商品名称</th>
+                        <th>预览图</th>
+                        <th>简介</th>
+                        <th>价格</th>
+                        <th>折扣</th>
+                        <th>订购单位</th>
+                        <th>最大订购</th>
+                        <th>已售</th>
+                        <th>操作</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    @foreach ($products as $product)
+                        <tr>
+                            <td><input type="checkbox"/></td>
+                            <td class="text-center span3">{{ $product->name }}</td>
+                            <td class="text-center span2"><img src="{{ $product->image }}"></td>
 
+                            <td class="text-center span2">{{ $product->detail }}</td>
+                            <td class="text-center span">{{ $product->price }}</td>
+                            <td class="text-center span">{{ $product->discount }}</td>
+                            <td class="text-center span">{{ $product->unit }}</td>
+                            <td class="text-center span">{{ $product->max }}</td>
+                            <td class="text-center span">1</td>
+                            <td class="span2">
+                                <a href="{{ URL('admin/product/'.$product->id.'/edit')}}"
+                                   class="btn btn-mini btn-success"><i class="fa fa-edit"></i> 编辑</a>
+                                {!! Form::open(['url' => url('admin/product/'.$product->id), 'method' => 'DELETE', 'style' => 'display: inline' ]) !!}
+                                <button type="submit" class="btn btn-mini btn-danger"><i class="fa fa-remove"></i> 删除
+                                </button>
+                                {!! Form::close() !!}
+                            </td>
+                        </tr>
+                    @endforeach
+                    </tbody>
+                </table>
             </div>
-            {!! Form::close() !!}
-        </div>
-        <div class="ui-row-flex ui-whitespace item hidden" id="template">
-            <div class="ui-col ui-col-4 name"></div>
-            <div class="ui-col ui-col-1 price-info"><i class="fa fa-cny"></i><span class="price"></span></div>
-            <div class="ui-col ui-col-1 number-info"><span class="number"></span><span class="unit"></span></div>
         </div>
     </div>
 @endsection

@@ -4,7 +4,7 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\Model\Product;
 use Illuminate\Http\Request;
-use View;
+use View, Validator, Auth, Flash, Redirect;
 
 class ProductController extends Controller
 {
@@ -25,7 +25,7 @@ class ProductController extends Controller
      */
     public function create()
     {
-        //
+        return View::make('product.create');
     }
 
     /**
@@ -33,9 +33,26 @@ class ProductController extends Controller
      *
      * @return Response
      */
-    public function store()
+    public function store(Request $request)
     {
-        //
+        $validation = Validator::make($request->all(), [
+            'name' => 'required',
+            'price' => 'required|max:255',
+            'image' => 'required',
+            'discount' => 'required',
+        ]);
+
+        if ($validation->fails()) {
+            return redirect()->back()->withErrors($validation->errors())->withInput();
+        }
+        $product = Product::create($request->all());
+        if ($product) {
+            Flash::success('发布成功！');
+            return Redirect::to('/admin/product/'.$product->id.'/edit');
+        } else {
+            Flash::error('发布失败！');
+            return Redirect::back()->withInput();
+        }
     }
 
     /**
@@ -56,9 +73,9 @@ class ProductController extends Controller
      * @param  int $id
      * @return Response
      */
-    public function edit($id)
+    public function edit(Product $product)
     {
-        //
+        return View::make('product.edit')->withProduct($product);
     }
 
     /**
@@ -67,9 +84,26 @@ class ProductController extends Controller
      * @param  int $id
      * @return Response
      */
-    public function update($id)
+    public function update(Request $request, Product $product)
     {
-        //
+        $validation = Validator::make($request->all(), [
+            'name' => 'required',
+            'price' => 'required|max:255',
+            'image' => 'required',
+            'discount' => 'required',
+        ]);
+
+        if ($validation->fails()) {
+            return redirect()->back()->withErrors($validation->errors())->withInput();
+        }
+        $product = $product->create($request->all());
+        if ($product) {
+            Flash::success('修改成功！');
+            return Redirect::to('/admin/product/'.$product->id.'/edit');
+        } else {
+            Flash::error('修改失败！');
+            return Redirect::back()->withInput();
+        }
     }
 
     /**
@@ -81,6 +115,17 @@ class ProductController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+
+    /**
+     * List all of the products.
+     *
+     * @return mixed
+     */
+    public function lists()
+    {
+        return View::make('product.list')->withProducts(Product::all());
     }
 
 }
