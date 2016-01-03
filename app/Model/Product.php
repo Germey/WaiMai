@@ -24,19 +24,17 @@ class Product extends Model
     /**
      * Set default discount.
      *
-     * @param $education
-     * @return string
+     * @param $discount
      */
     public function setDiscountAttribute($discount)
     {
-        $this->attributes['discount'] = $discount ? $discount : 1;
+        $this->attributes['discount'] = $discount!='' ? $discount : 1;
     }
 
     /**
-     * Set default discount.
+     * Set default remain.
      *
-     * @param $education
-     * @return string
+     * @param $remain
      */
     public function setRemainAttribute($remain)
     {
@@ -46,8 +44,7 @@ class Product extends Model
     /**
      * Set default max num.
      *
-     * @param $education
-     * @return string
+     * @param $max
      */
     public function setMaxAttribute($max)
     {

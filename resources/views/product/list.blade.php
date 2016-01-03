@@ -4,8 +4,9 @@
     <div id="product-list">
         <ul class="ui-list ui-border-tb">
             @foreach($products as $product)
-                <span class="ui-tag-discount"></span>
-
+                @if($product->discount < 1)
+                    <span class="ui-tag-discount"></span>
+                @endif
                 <li class="ui-border-t product-item" id="product-{{ $product->id }}" index="{{ $product->id }}">
 
                     <div class="ui-avatar">
@@ -23,7 +24,7 @@
                             <div class="ui-col ui-col-3">
                                 <p class="describe">
                                     <i class="fa fa-cny"></i>
-                                    @if ($product->discount == 1)
+                                    @if($product->discount == 1)
                                         <span class="price">{{ $product->price }}</span>
                                     @else
                                         <span class="pre-price">{{ $product->price }}</span>

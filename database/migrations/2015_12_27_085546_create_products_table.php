@@ -21,7 +21,7 @@ class CreateProductsTable extends Migration {
             $table->text('detail')->nullable();
             $table->float('price');
             $table->string('unit')->default('斤');
-            $table->integer('discount')->default(1);
+            $table->float('discount')->default(1);
             $table->integer('remain')->default(999);
             $table->integer('max')->default(999);
             $table->integer('min')->default(0);

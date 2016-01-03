@@ -22,7 +22,7 @@
                     </tr>
                     </thead>
                     <tbody>
-                    @foreach ($orders as $order)
+                    @foreach($orders as $order)
                         <tr>
                             <td class="text-center span1">{{ $order->id }}</td>
                             <td class="text-center span2">

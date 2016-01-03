@@ -69,14 +69,17 @@ class ProductController extends Controller
         return View::make('product.edit')->withProduct($product);
     }
 
+
     /**
      * Update the specified resource in storage.
      *
-     * @param  int $id
-     * @return Response
+     * @param ProductRequest $request
+     * @param Product $product
+     * @return mixed
      */
     public function update(ProductRequest $request, Product $product)
     {
+        //dd($request->all());
         $product->update($request->all());
         if ($product) {
             Flash::success('修改成功！');
