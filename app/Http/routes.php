@@ -31,6 +31,7 @@
     Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function() {
         Route::get('/', 'HomeController@index');
         Route::resource('product', 'ProductController');
+        Route::resource('order', 'OrderController');
 
     });
 

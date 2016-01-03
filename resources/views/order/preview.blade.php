@@ -4,7 +4,7 @@
     <div id="order-preview">
         <script type="text/javascript"
                 src="http://api.map.baidu.com/api?v=2.0&ak=AE4d81c6a9edc1562e49ccc0a87d3fb5"></script>
-        {!! Form::open(['url' => url('order/submit'), 'id' => 'order-submit-form']) !!}
+        {!! Form::open(['url' => url('order/'), 'id' => 'order-submit-form']) !!}
         <p class="title">点餐信息确认</p>
 
         <div class="bought-items">
@@ -16,8 +16,8 @@
                     <div class="ui-col ui-col-1 number-info"><span class="number">{{ $item['number'] }}</span><span
                                 class="unit">{{ $item['unit'] }}</span>
                     </div>
-                    {!! Form::hidden("order[$key][index]", $item['index']) !!}
-                    {!! Form::hidden("order[$key][number]", $item['number']) !!}
+                    {!! Form::hidden("content[$key][index]", $item['index']) !!}
+                    {!! Form::hidden("content[$key][number]", $item['number']) !!}
                 </div>
             @endforeach
         </div>

@@ -2,7 +2,7 @@
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-use View;
+use View, Redirect;
 use Illuminate\Http\Request;
 use App\Model\Order;
 use App\Model\Product;
@@ -17,7 +17,7 @@ class OrderController extends Controller
      */
     public function index()
     {
-        //
+        return View::make('order.index')->withOrders(Order::paginate(5));
     }
 
     /**
@@ -37,7 +37,13 @@ class OrderController extends Controller
      */
     public function store(Request $request)
     {
-        dd($request->all());
+        $result = $request->all();
+        list($items, $total) = $this->getOrderInfo($request, 'content');
+        $result = array_merge($result, $total);
+        $order = Order::create($result);
+        if ($order) {
+            return Redirect::to('/pay')->withOrder($order);
+        }
     }
 
     /**
@@ -84,14 +90,16 @@ class OrderController extends Controller
         //
     }
 
-    public function postSubmit(Request $request) {
-        dd($request->all());
-    }
 
-
+    /**
+     * Preview the order.
+     *
+     * @param Request $request
+     * @return mixed
+     */
     public function postPreview(Request $request)
     {
-        list($items, $total) = $this->getOrderInfo($request);
+        list($items, $total) = $this->getOrderInfo($request, 'order');
         return View::make('order.preview')->with([
             'items' => $items,
             'total' => $total,
@@ -104,9 +112,9 @@ class OrderController extends Controller
      * @param Request $request
      * @return array
      */
-    private function getOrderInfo(Request $request)
+    private function getOrderInfo(Request $request, $key)
     {
-        $order = $request->get('order', []);
+        $order = $request->get($key, []);
         $items = [];
         $total['price'] = 0;
         $total['number'] = 0;

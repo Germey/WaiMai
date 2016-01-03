@@ -16,12 +16,17 @@ class CreateOrdersTable extends Migration {
 		{
 			$table->increments('id');
             $table->string('open_id');
-            $table->string('product_id');
-            $table->integer('num');
+            $table->string('content');
             $table->string('name');
-            $table->string('address');
-            $table->text('phone');
+            $table->string('location');
+            $table->string('street_number');
+            $table->string('phone');
             $table->text('remark');
+            $table->float('lng');
+            $table->float('lat');
+            $table->float('price');
+            $table->integer('number');
+            $table->integer('status')->default(0);
 			$table->timestamps();
 		});
 	}

@@ -4,9 +4,6 @@
     <div class="main">
         <div class="widget-box">
             <div class="widget-title">
-			<span class="icon">
-				<input type="checkbox" id="title-checkbox" name="title-checkbox"/>
-			</span>
                 <h5><a href="{{ URL('admin/product/create')}}" class="btn btn-mini btn-primary">增加菜品</a></h5>
             </div>
             <div class="widget-content nopadding">
