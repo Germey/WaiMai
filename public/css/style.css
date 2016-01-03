@@ -45,6 +45,9 @@ a:hover {
 #product-list .product-item .describe .every {
   margin: 0 -3px;
 }
+#product-list .product-item .describe .pre-price {
+  text-decoration: line-through;
+}
 #product-list .bought-items .item {
   padding: 10px 20px;
   color: #666666;

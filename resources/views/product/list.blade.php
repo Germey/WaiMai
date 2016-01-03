@@ -4,13 +4,17 @@
     <div id="product-list">
         <ul class="ui-list ui-border-tb">
             @foreach($products as $product)
+                <span class="ui-tag-discount"></span>
+
                 <li class="ui-border-t product-item" id="product-{{ $product->id }}" index="{{ $product->id }}">
+
                     <div class="ui-avatar">
                         <a href="{{ url('/product/'.$product->id) }}">
                             <span><img src="{{ $product->image }}"></span>
                         </a>
                     </div>
                     <div class="ui-list-info">
+
                         <h4 class="ui-nowrap name">{{ $product->name }}</h4>
 
                         <p class="ui-nowrap detail">{{ $product->detail }}</p>
@@ -19,10 +23,16 @@
                             <div class="ui-col ui-col-3">
                                 <p class="describe">
                                     <i class="fa fa-cny"></i>
-                                    <span class="price">{{ $product->price }}</span>
+                                    @if ($product->discount == 1)
+                                        <span class="price">{{ $product->price }}</span>
+                                    @else
+                                        <span class="pre-price">{{ $product->price }}</span>
+                                        <span class="price">{{ floatval($product->price)*floatval($product->discount) }}</span>
+                                    @endif
                                     <span class="every">/</span>
                                     <span class="unit">{{ $product->unit }}</span>
-                                </p></div>
+                                </p>
+                            </div>
                             <div class="ui-col ui-col-1">
                                 <div>
                                     <i class="fa fa-minus-square-o minus"></i>
