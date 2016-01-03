@@ -24,9 +24,10 @@ class ProductRequest extends Request {
 		return [
             'name' => 'required',
             'image' => 'required',
-            'price' => 'required|numeric',
+            'price' => 'required|numeric|min:0',
             'discount' => 'sometimes|numeric|max:1|min:0',
             'unit' => 'required',
+            'max' => 'sometimes|integer|min:1',
             'remain' => 'sometimes|numeric',
             'detail' => 'required',
 		];

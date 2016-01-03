@@ -39,7 +39,7 @@ return [
 	"exists"               => "The selected :attribute is invalid.",
 	"image"                => "The :attribute must be an image.",
 	"in"                   => "The selected :attribute is invalid.",
-	"integer"              => "The :attribute must be an integer.",
+	"integer"              => ":attribute必须是整数",
 	"ip"                   => "The :attribute must be a valid IP address.",
 	"max"                  => [
 		"numeric" => ":attribute不能大于:max",
@@ -110,6 +110,7 @@ return [
         'unit' => '单位',
         'remain' => '剩余量',
         'detail' => '介绍',
+        'max' => '最大购买数量',
     ],
 
 ];

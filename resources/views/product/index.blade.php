@@ -10,10 +10,9 @@
                 <h5><a href="{{ URL('admin/product/create')}}" class="btn btn-mini btn-primary">增加菜品</a></h5>
             </div>
             <div class="widget-content nopadding">
-                <table class="table table-bordered table-striped with-check">
+                <table class="table table-bordered table-striped">
                     <thead>
                     <tr>
-                        <th><input type="checkbox"/></th>
                         <th>商品名称</th>
                         <th>预览图</th>
                         <th>简介</th>
@@ -21,17 +20,15 @@
                         <th>折扣</th>
                         <th>订购单位</th>
                         <th>最大订购</th>
-                        <th>已售</th>
+                        <th>已售数量</th>
                         <th>操作</th>
                     </tr>
                     </thead>
                     <tbody>
                     @foreach ($products as $product)
                         <tr>
-                            <td><input type="checkbox"/></td>
-                            <td class="text-center span3">{{ $product->name }}</td>
-                            <td class="text-center span2"><img src="{{ $product->image }}"></td>
-
+                            <td class="text-center span2">{{ $product->name }}</td>
+                            <td class="text-center span2"><img src="{{ $product->image }}" ></td>
                             <td class="text-center span2">{{ $product->detail }}</td>
                             <td class="text-center span">{{ $product->price }}</td>
                             <td class="text-center span">{{ $product->discount }}</td>

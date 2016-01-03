@@ -77,7 +77,7 @@ class ProductController extends Controller
      */
     public function update(ProductRequest $request, Product $product)
     {
-        $product = $product->create($request->all());
+        $product->update($request->all());
         if ($product) {
             Flash::success('修改成功！');
             return Redirect::to('/admin/product/'.$product->id.'/edit');
@@ -93,9 +93,15 @@ class ProductController extends Controller
      * @param  int $id
      * @return Response
      */
-    public function destroy($id)
+    public function destroy(Product $product)
     {
-        //
+        if ($product->delete()) {
+            Flash::success('删除成功！');
+            return Redirect::to('admin/product');
+        } else {
+            Flash::error('删除失败！');
+            return Redirect::to('admin/product');
+        }
     }
 
 
