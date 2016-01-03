@@ -2,6 +2,7 @@
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use App\Http\Requests\ProductRequest;
 use App\Model\Product;
 use Illuminate\Http\Request;
 use View, Validator, Auth, Flash, Redirect;
@@ -15,7 +16,7 @@ class ProductController extends Controller
      */
     public function index()
     {
-        return View::make('product.index')->withProducts(Product::all());
+        return View::make('product.index')->withProducts(Product::paginate(5));
     }
 
     /**
@@ -33,18 +34,8 @@ class ProductController extends Controller
      *
      * @return Response
      */
-    public function store(Request $request)
+    public function store(ProductRequest $request)
     {
-        $validation = Validator::make($request->all(), [
-            'name' => 'required',
-            'price' => 'required|max:255',
-            'image' => 'required',
-            'discount' => 'required',
-        ]);
-
-        if ($validation->fails()) {
-            return redirect()->back()->withErrors($validation->errors())->withInput();
-        }
         $product = Product::create($request->all());
         if ($product) {
             Flash::success('发布成功！');
@@ -84,18 +75,8 @@ class ProductController extends Controller
      * @param  int $id
      * @return Response
      */
-    public function update(Request $request, Product $product)
+    public function update(ProductRequest $request, Product $product)
     {
-        $validation = Validator::make($request->all(), [
-            'name' => 'required',
-            'price' => 'required|max:255',
-            'image' => 'required',
-            'discount' => 'required',
-        ]);
-
-        if ($validation->fails()) {
-            return redirect()->back()->withErrors($validation->errors())->withInput();
-        }
         $product = $product->create($request->all());
         if ($product) {
             Flash::success('修改成功！');

@@ -42,22 +42,22 @@ return [
 	"integer"              => "The :attribute must be an integer.",
 	"ip"                   => "The :attribute must be a valid IP address.",
 	"max"                  => [
-		"numeric" => "The :attribute may not be greater than :max.",
+		"numeric" => ":attribute不能大于:max",
 		"file"    => "The :attribute may not be greater than :max kilobytes.",
 		"string"  => "The :attribute may not be greater than :max characters.",
 		"array"   => "The :attribute may not have more than :max items.",
 	],
 	"mimes"                => "The :attribute must be a file of type: :values.",
 	"min"                  => [
-		"numeric" => "The :attribute must be at least :min.",
+		"numeric" => ":attribute不能小于:min",
 		"file"    => "The :attribute must be at least :min kilobytes.",
 		"string"  => "The :attribute must be at least :min characters.",
 		"array"   => "The :attribute must have at least :min items.",
 	],
 	"not_in"               => "The selected :attribute is invalid.",
-	"numeric"              => "The :attribute must be a number.",
+	"numeric"              => ":attribute必须要是数字",
 	"regex"                => "The :attribute format is invalid.",
-	"required"             => "The :attribute field is required.",
+	"required"             => ":attribute必须要填写",
 	"required_if"          => "The :attribute field is required when :other is :value.",
 	"required_with"        => "The :attribute field is required when :values is present.",
 	"required_with_all"    => "The :attribute field is required when :values is present.",
@@ -103,7 +103,13 @@ return [
 	*/
 
 	'attributes' => [
-        'name' => '姓名'
+        'name' => '名称',
+        'image' => '预览图',
+        'price' => '价格',
+        'discount' => '折扣',
+        'unit' => '单位',
+        'remain' => '剩余量',
+        'detail' => '介绍',
     ],
 
 ];

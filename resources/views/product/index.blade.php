@@ -50,6 +50,15 @@
                     @endforeach
                     </tbody>
                 </table>
+                <div class="clearfix">
+                    <div class="text-right">
+                        <p>当前第{{ $products->currentPage() }}页，共{{ $products->lastPage() }}页</p>
+                    </div>
+                    <div class="pagination pull-right">
+                        {!!  $products->setPath('/admin/product')->render() !!}
+                    </div>
+                </div>
+
             </div>
         </div>
     </div>

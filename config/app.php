@@ -52,7 +52,7 @@ return [
 	|
 	*/
 
-	'locale' => 'en',
+	'locale' => 'zh_CN',
 
 	/*
 	|--------------------------------------------------------------------------
@@ -146,6 +146,7 @@ return [
 		'App\Providers\EventServiceProvider',
 		'App\Providers\RouteServiceProvider',
 		'App\Providers\SidebarServiceProvider',
+		'App\Providers\ProductServiceProvider',
 
         'Laracasts\Flash\FlashServiceProvider',
 

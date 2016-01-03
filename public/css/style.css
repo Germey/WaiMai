@@ -4,6 +4,13 @@ body {
 .hidden {
   display: none;
 }
+.only-numeric {
+  ime-mode: disabled;
+}
+.describe-label {
+  margin-top: 5px;
+  font-size: 12px;
+}
 .ui-tiled {
   padding-top: 8px;
   color: #333333;
@@ -113,6 +120,13 @@ a:hover {
 }
 #order-preview #map div.anchorBL {
   display: none !important;
+}
+#create-product .pre-view,
+#edit-product .pre-view {
+  max-width: 300px;
+  max-height: 400px;
+  margin-top: 10px;
+  margin-right: 10px;
 }
 ::-webkit-scrollbar {
   width: 3px;

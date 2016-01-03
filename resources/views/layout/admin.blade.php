@@ -18,6 +18,7 @@
     <script src="{{ asset('js/jquery.ui.custom.js') }}"></script>
     <script src="{{ asset('js/matrix.js') }}"></script>
     <script src="{{ asset('js/bootstrap.min.js') }}"></script>
+    <script src="{{ asset('js/germy.functions.js') }}"></script>
 
 </head>
 <body>
