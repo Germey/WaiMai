@@ -36,7 +36,7 @@ class ProductServiceProvider extends ServiceProvider
     {
         View::composer('product.form', function ($view) {
             $view->with([
-                'units' => Unit::all()->lists('name', 'name'),
+                'units' => Unit::all()->lists('name', 'id'),
             ]);
         });
     }

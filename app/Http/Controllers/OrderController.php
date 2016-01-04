@@ -39,7 +39,8 @@ class OrderController extends Controller
     {
         $result = $request->all();
         list($items, $total) = $this->getOrderInfo($request, 'content');
-        $result = array_merge($result, $total);
+        $extra = ['identifier' => time().$request->get('phone', '')];
+        $result = array_merge($result, $total, $extra);
         $order = Order::create($result);
         if ($order) {
             return Redirect::to('/pay')->withOrder($order);

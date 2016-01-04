@@ -28,7 +28,7 @@ class Product extends Model
      */
     public function setDiscountAttribute($discount)
     {
-        $this->attributes['discount'] = $discount!='' ? $discount : 1;
+        $this->attributes['discount'] = $discount != '' ? $discount : 1;
     }
 
     /**
@@ -49,6 +49,17 @@ class Product extends Model
     public function setMaxAttribute($max)
     {
         $this->attributes['max'] = $max ? $max : 999;
+    }
+
+
+    /**
+     * Return the unit this belongs to.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function getUnit()
+    {
+        return $this->belongsTo('App\Model\Unit', 'unit');
     }
 
 

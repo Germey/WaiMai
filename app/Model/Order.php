@@ -9,7 +9,7 @@ class Order extends Model
      *
      * @var array
      */
-    protected $guarded  = [];
+    protected $guarded = [];
 
     /**
      * Order to string.
@@ -27,10 +27,11 @@ class Order extends Model
      *
      * @return mixed
      */
-    public function getContentAttribute($content) {
+    public function getContentAttribute($content)
+    {
         $content = unserialize($content);
         $items = [];
-        foreach($content as $value) {
+        foreach ($content as $value) {
             $product = Product::find($value['index']);
             $item['name'] = $product->name;
             $item['number'] = $value['number'];
@@ -38,6 +39,26 @@ class Order extends Model
             array_push($items, $item);
         }
         return $items;
+    }
+
+    /**
+     * Get this order's payStatus.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function payStatus()
+    {
+        return $this->belongsTo('App\Model\PayStatus', 'pay_status');
+    }
+
+    /**
+     * Get this order's deliveryStatus.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function deliveryStatus()
+    {
+        return $this->belongsTo('App\Model\DeliveryStatus', 'delivery_status');
     }
 
 }

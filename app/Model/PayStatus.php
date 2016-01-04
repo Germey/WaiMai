@@ -2,15 +2,15 @@
 
 use Illuminate\Database\Eloquent\Model;
 
-class Unit extends Model {
+class PayStatus extends Model {
 
     /**
-     * Return products which have this unit.
+     * Return orders belongs to this payStatus.
      *
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
-    public function product() {
-        return $this->hasMany('App\Model\Product');
+    public function order() {
+        return $this->hasMany('App\Model\Order');
     }
 
 }

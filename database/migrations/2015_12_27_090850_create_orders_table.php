@@ -15,6 +15,7 @@ class CreateOrdersTable extends Migration {
 		Schema::create('orders', function(Blueprint $table)
 		{
 			$table->increments('id');
+			$table->string('identifier');
             $table->string('open_id');
             $table->string('content');
             $table->string('name');
@@ -26,7 +27,8 @@ class CreateOrdersTable extends Migration {
             $table->float('lat');
             $table->float('price');
             $table->integer('number');
-            $table->integer('status')->default(0);
+            $table->integer('pay_status')->default(1);
+            $table->integer('delivery_status')->default(1);
 			$table->timestamps();
 		});
 	}

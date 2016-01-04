@@ -29,7 +29,7 @@
                             <td class="text-center span2">{{ $product->detail }}</td>
                             <td class="text-center span">{{ $product->price }}</td>
                             <td class="text-center span">{{ $product->discount }}</td>
-                            <td class="text-center span">{{ $product->unit }}</td>
+                            <td class="text-center span">{{ $product->getUnit->name }}</td>
                             <td class="text-center span">{{ $product->max }}</td>
                             <td class="text-center span">1</td>
                             <td class="span2">
