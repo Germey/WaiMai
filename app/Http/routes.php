@@ -33,6 +33,7 @@
         Route::resource('product', 'ProductController');
         Route::resource('order', 'OrderController');
         Route::controller('order', 'OrderController');
+        Route::controller('shop', 'ShopController');
 
     });
 
