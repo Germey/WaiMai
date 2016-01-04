@@ -147,6 +147,7 @@ return [
 		'App\Providers\RouteServiceProvider',
 		'App\Providers\SidebarServiceProvider',
 		'App\Providers\ProductServiceProvider',
+		'App\Providers\OrderServiceProvider',
 
         'Laracasts\Flash\FlashServiceProvider',
 

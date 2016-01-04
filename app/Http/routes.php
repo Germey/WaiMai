@@ -32,6 +32,7 @@
         Route::get('/', 'HomeController@index');
         Route::resource('product', 'ProductController');
         Route::resource('order', 'OrderController');
+        Route::controller('order', 'OrderController');
 
     });
 

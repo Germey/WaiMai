@@ -2,7 +2,7 @@
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-use View, Redirect;
+use View, Redirect, Response;
 use Illuminate\Http\Request;
 use App\Model\Order;
 use App\Model\Product;
@@ -39,7 +39,7 @@ class OrderController extends Controller
     {
         $result = $request->all();
         list($items, $total) = $this->getOrderInfo($request, 'content');
-        $extra = ['identifier' => time().$request->get('phone', '')];
+        $extra = ['identifier' => time() . $request->get('phone', '')];
         $result = array_merge($result, $total, $extra);
         $order = Order::create($result);
         if ($order) {
@@ -131,6 +131,20 @@ class OrderController extends Controller
             $total['number'] += $o['number'];
         }
         return array($items, $total);
+    }
+
+    public function postChangeStatus(Request $request)
+    {
+        $data = $request->all();
+        if (Order::where('id', '=', $data['pk'])->update([
+            'delivery_status' => $data['value']
+        ])
+        ) {
+            return Response::json(['status' => 200]);
+        } else {
+            return Response::json(['status' => 502]);
+        };
+
     }
 
 }

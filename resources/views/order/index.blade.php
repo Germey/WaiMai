@@ -2,6 +2,7 @@
 
 @section('main')
     <div class="main">
+        @include('support.editable')
         <div class="widget-box">
             <div class="widget-title">
             </div>
@@ -34,16 +35,14 @@
                             <td class="text-center span">{{ $order->name }}</td>
                             <td class="text-center span">{{ $order->location.$order->street_number }}</td>
                             <td class="text-center span">{{ $order->phone }}</td>
-                            <td class="text-center span">{{ $order->deliveryStatus->name }}</td>
-                            <td class="text-center span">{{ $order->updated_at }}</td>
-                            <!--
-                            <td class="span2">
-                                {!! Form::open(['url' => url('admin/order/'.$order->id), 'method' => 'DELETE', 'style' => 'display: inline' ]) !!}
-                                <button type="submit" class="btn btn-mini btn-danger"><i class="fa fa-remove"></i> 删除
-                                </button>
-                                {!! Form::close() !!}
+                            <td class="text-center span">
+                                <a href="#" class="order-delivery" data-url="/admin/order/change-status"
+                                   data-name="delivery_status" data-type="select" data-pk="{{ $order->id }}"
+                                   data-value="{{ $order->deliveryStatus->id }}"
+                                   data-title="修改配送状态">{{ $order->deliveryStatus->name }}
+                                </a>
                             </td>
-                            -->
+                            <td class="text-center span">{{ $order->updated_at }}</td>
                         </tr>
                     @endforeach
                     </tbody>
