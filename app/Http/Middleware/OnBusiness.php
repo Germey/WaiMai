@@ -15,9 +15,9 @@ class OnBusiness
      */
     public function handle($request, Closure $next)
     {
-        if (!$this->isOnBusiness()) {
-            return 'shabi';
-        }
+//        if (!$this->isOnBusiness()) {
+//            return 'shabi';
+//        }
         return $next($request);
     }
 

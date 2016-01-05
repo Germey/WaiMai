@@ -35,6 +35,7 @@
         Route::controller('order', 'OrderController');
         Route::get('config', 'ConfigController@index');
         Route::controller('config', 'ConfigController');
+        Route::resource('unit', 'UnitController');
 
     });
 

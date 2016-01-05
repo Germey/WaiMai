@@ -17,7 +17,7 @@ class Order extends Model
      * @param $education
      * @return string
      */
-    public function setContentAttribute($content)
+    public function setContentAttribute8($content)
     {
         $this->attributes['content'] = serialize($content);
     }
