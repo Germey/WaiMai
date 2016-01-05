@@ -18,7 +18,8 @@ class ConfigController extends Controller
         'start_price',
         'delivery_price',
         'package_price',
-        'is_on',
+        'price_format',
+        'on_business',
     ];
 
     /**

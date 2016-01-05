@@ -9,6 +9,15 @@ use View, Validator, Auth, Flash, Redirect;
 
 class ProductController extends Controller
 {
+
+    /**
+     * Middleware on front lists.
+     */
+    public function __construct()
+    {
+        $this->middleware('on', ['only' => 'lists']);
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -39,7 +48,7 @@ class ProductController extends Controller
         $product = Product::create($request->all());
         if ($product) {
             Flash::success('发布成功！');
-            return Redirect::to('/admin/product/'.$product->id.'/edit');
+            return Redirect::to('/admin/product/' . $product->id . '/edit');
         } else {
             Flash::error('发布失败！');
             return Redirect::back()->withInput();
@@ -83,7 +92,7 @@ class ProductController extends Controller
         $product->update($request->all());
         if ($product) {
             Flash::success('修改成功！');
-            return Redirect::to('/admin/product/'.$product->id.'/edit');
+            return Redirect::to('/admin/product/' . $product->id . '/edit');
         } else {
             Flash::error('修改失败！');
             return Redirect::back()->withInput();

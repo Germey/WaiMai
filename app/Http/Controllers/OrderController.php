@@ -133,6 +133,12 @@ class OrderController extends Controller
         return array($items, $total);
     }
 
+    /**
+     * Editable ajax change status.
+     *
+     * @param Request $request
+     * @return mixed
+     */
     public function postChangeStatus(Request $request)
     {
         $data = $request->all();

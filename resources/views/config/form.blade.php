@@ -14,7 +14,7 @@
                         </div>
                     @elseif($config['input'] == 'time')
                         <div id="datetimepicker3" class="{{ $config['class'] }}">
-                            <input data-format="hh:mm:ss" type="text"/>
+                            {!! Form::text($config['key'], $config['value'], ['data-format' => 'hh:mm:ss']) !!}}
                             <span class="add-on">
                                 <i data-time-icon="icon-time"
                                    data-date-icon="icon-calendar"></i>

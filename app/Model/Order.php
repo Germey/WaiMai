@@ -35,7 +35,7 @@ class Order extends Model
             $product = Product::find($value['index']);
             $item['name'] = $product->name;
             $item['number'] = $value['number'];
-            $item['unit'] = $product->unit;
+            $item['unit'] = $product->getUnit->name;
             array_push($items, $item);
         }
         return $items;

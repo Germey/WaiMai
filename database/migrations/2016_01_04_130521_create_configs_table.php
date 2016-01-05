@@ -22,6 +22,7 @@ class CreateConfigsTable extends Migration {
             $table->string('input');
             $table->string('description');
             $table->string('class');
+            $table->string('weight')->default(1);
 			$table->timestamps();
 		});
 	}

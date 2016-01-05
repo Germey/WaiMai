@@ -25,13 +25,13 @@
                                 <p class="describe">
                                     <i class="fa fa-cny"></i>
                                     @if($product->discount == 1)
-                                        <span class="price">{{ $product->price }}</span>
+                                        <span class="price">{{ number_format($product->price, $price_format, '.', '') }}</span>
                                     @else
-                                        <span class="pre-price">{{ $product->price }}</span>
-                                        <span class="price">{{ floatval($product->price)*floatval($product->discount) }}</span>
+                                        <span class="pre-price">{{ number_format($product->price, $price_format, '.', '') }}</span>
+                                        <span class="price">{{ number_format(floatval($product->price)*floatval($product->discount), $price_format, '.', '') }}</span>
                                     @endif
                                     <span class="every">/</span>
-                                    <span class="unit">{{ $product->unit }}</span>
+                                    <span class="unit">{{ $product->getUnit->name }}</span>
                                 </p>
                             </div>
                             <div class="ui-col ui-col-1">
@@ -51,6 +51,7 @@
             <div class="ui-row-flex options">
                 <div class="ui-col ui-col-3 total">
                     <div class="total-price">
+                        <span>已选购：</span>
                         <i class="fa fa-cny"></i>
                         <span class="total">0</span>
                     </div>

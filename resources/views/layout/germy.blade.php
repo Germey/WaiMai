@@ -6,7 +6,7 @@
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
     <meta name="format-detection" content="telephone=no">
     <link rel="stylesheet" href="/css/frozen.css">
-    <link rel="stylesheet" href="/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/css/font-awesome4.4.css">
     <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
@@ -41,4 +41,5 @@
 <script src="/js/zepto.min.js"></script>
 <script src="/js/frozen.js"></script>
 <script src="/js/germy.front.js"></script>
+<script src="/js/germy.map.js"></script>
 </html>
