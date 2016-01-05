@@ -11,6 +11,10 @@ body {
   margin-top: 5px;
   font-size: 12px;
 }
+.btn-group .active {
+  color: #fff;
+  background-color: #bd362f;
+}
 .table th,
 .table td {
   vertical-align: middle;

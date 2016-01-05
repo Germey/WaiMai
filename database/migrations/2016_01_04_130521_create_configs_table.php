@@ -19,6 +19,9 @@ class CreateConfigsTable extends Migration {
             $table->string('key');
             $table->string('value')->nullable();
             $table->string('title');
+            $table->string('input');
+            $table->string('description');
+            $table->string('class');
 			$table->timestamps();
 		});
 	}

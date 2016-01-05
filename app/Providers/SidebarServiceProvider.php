@@ -84,7 +84,7 @@ class SidebarServiceProvider extends ServiceProvider {
             ['path' => '', 'text' => '首页', 'icon' => 'signal'],
             ['path' => 'product', 'text' => '商品管理', 'icon' => 'signal'],
             ['path' => 'order', 'text' => '订单管理', 'icon' => 'signal'],
-            ['path' => 'shop', 'text' => '店铺管理', 'icon' => 'signal'],
+            ['path' => 'config', 'text' => '店铺管理', 'icon' => 'signal'],
 
         ];
         return $this->menu_items;
