@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\ServiceProvider;
 use App\Model\Unit;
 use View;
+
 class ProductServiceProvider extends ServiceProvider
 {
 
@@ -47,14 +48,14 @@ class ProductServiceProvider extends ServiceProvider
     /**
      * Compose the number of decimal places of price.
      */
-    private function composePriceFormat() {
+    private function composePriceFormat()
+    {
         View::composer('product.list', function ($view) {
             $view->with([
                 'price_format' => $this->getConfigValueByKey('price_format')
             ]);
         });
     }
-
 
 
     /**

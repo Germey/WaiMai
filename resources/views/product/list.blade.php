@@ -73,4 +73,7 @@
             <div class="ui-col ui-col-1 number-info"><span class="number"></span><span class="unit"></span></div>
         </div>
     </div>
+    <script>
+        var price_format = '{!! $price_format !!}';
+    </script>
 @endsection

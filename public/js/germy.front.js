@@ -11,16 +11,15 @@ $(function() {
             index = product.attr('index');
             if (now_num > 0) {
                 product.find('.choose-num').text(now_num);
-                console.log(index);
                 bought = [];
                 $.each($('.bought-items .item'), function() {
                     bought.push($(this).attr('index'));
                 });
-                console.log(bought);
                 if ($.inArray(index, bought) != -1) {
                     node = $('.bought-items .item[index=' + index + ']');
                     node.find('.number').text(now_num);
-                    node.find('.price').text(parseFloat(product.find('.price').text()) * now_num);
+                    price = (parseFloat(product.find('.price').text()) * now_num).toFixed(price_format);
+                    node.find('.price').text(price);
                 } else {
                     node = $('#template').clone().removeAttr('id').removeClass('hidden');
                     node.find('.name').text(product.find('.name').text());
@@ -39,7 +38,7 @@ $(function() {
             $.each($('.bought-items .item'), function() {
                 total += parseFloat($(this).find('.price').text());
             });
-            $('.bought-items .total-price').find('.total').text(total);
+            $('.bought-items .total-price').find('.total').text(total.toFixed(price_format));
         }
 
         $('#product-list').on('click', '.add', function() {

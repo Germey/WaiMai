@@ -11,8 +11,8 @@
             @foreach($items as $key => $item)
                 <div class="ui-row-flex ui-whitespace item">
                     <div class="ui-col ui-col-4 name">{{ $item['name'] }}</div>
-                    <div class="ui-col ui-col-1 price-info"><i class="fa fa-cny"></i><span
-                                class="price">{{ $item['price'] }}</span></div>
+                    <div class="ui-col ui-col-2 price-info"><i class="fa fa-cny"></i><span
+                                class="price">{{ number_format($item['price'], $price_format, '.', '') }}</span></div>
                     <div class="ui-col ui-col-1 number-info"><span class="number">{{ $item['number'] }}</span><span
                                 class="unit">{{ $item['unit'] }}</span>
                     </div>
@@ -23,9 +23,9 @@
         </div>
         <div class="ui-row-flex ui-whitespace total-info">
             <div class="ui-col ui-col-4 total">总计</div>
-            <div class="ui-col ui-col-1 price-info">
+            <div class="ui-col ui-col-2 price-info">
                 <i class="fa fa-cny"></i>
-                <span class="price">{{ $total['price'] }}</span>
+                <span class="price">{{ number_format($total['price'], $price_format, '.', '') }}</span>
             </div>
             <div class="ui-col ui-col-1 number-info">
                 <span class="number">{{ $total['number'] }}</span>

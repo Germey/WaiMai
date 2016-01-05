@@ -14,6 +14,7 @@ class OrderServiceProvider extends ServiceProvider
     public function boot()
     {
         $this->composeDeliveryStatus();
+        $this->composePriceFormat();
     }
 
     /**
@@ -38,6 +39,31 @@ class OrderServiceProvider extends ServiceProvider
                 'delivery_status' => Response::json(DB::table('delivery_statuses')->select('id as value', 'name as text')->get())->getContent()
             ]);
         });
+    }
+
+
+    /**
+     * Compose the number of decimal places of price.
+     */
+    private function composePriceFormat()
+    {
+        View::composer('order.preview', function ($view) {
+            $view->with([
+                'price_format' => $this->getConfigValueByKey('price_format')
+            ]);
+        });
+    }
+
+
+    /**
+     * Get config value.
+     *
+     * @return mixed
+     */
+    private function getConfigValueByKey($key)
+    {
+        $value = DB::table('configs')->where('key', $key)->first()->value;
+        return $value;
     }
 
 }
