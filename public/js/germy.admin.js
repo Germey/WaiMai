@@ -20,4 +20,9 @@ $(function() {
         });
         $('.btn-group .value').radio();
     }
+
+    if ($('.timepick').length > 0) {
+        $('.timepick').timepick();
+    }
+
 });

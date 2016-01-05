@@ -7,12 +7,11 @@
         <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}"/>
         <link rel="stylesheet" href="{{ asset('css/bootstrap-responsive.min.css') }}"/>
         <link rel="stylesheet" href="{{ asset('css/matrix-login.css') }}"/>
-        <link href="{{ asset('css/font-awesome.min.css') }}" rel="stylesheet"/>
+        <link rel="stylesheet" href="{{ asset('css/font-awesome.css') }}"/>
     </head>
     <body>
         @yield('content')
         <script src="{{ asset('js/jquery.js') }}"></script>
-        <script src="{{ asset('js/matrix.login.js') }}"></script>
     </body>
 
 </html>

@@ -12,6 +12,14 @@
                             {!! Form::button('否', ['class' => 'btn', 'value' => 0]) !!}
                             {!! Form::hidden($config['key'], $config['value'], ['class' => 'value']) !!}
                         </div>
+                    @elseif($config['input'] == 'time')
+                        <div id="datetimepicker3" class="{{ $config['class'] }}">
+                            <input data-format="hh:mm:ss" type="text"/>
+                            <span class="add-on">
+                                <i data-time-icon="icon-time"
+                                   data-date-icon="icon-calendar"></i>
+                            </span>
+                        </div>
                     @else
                         {!! Form::text($config['key'], $config['value'], ['class' => $config['class']]) !!}
                     @endif
@@ -21,6 +29,7 @@
         @endif
     @endforeach
 @endforeach
+
 <div class="control-group">
     <div class="controls">
         {!! Form::submit('确定', ['class' => 'btn btn-primary']) !!}

@@ -3,6 +3,7 @@
 @section('main')
     <div class="main">
         @include('support.radio')
+        @include('support.timepick')
         <div class="row-fluid">
             <div class="span12">
                 <div class="widget-box">

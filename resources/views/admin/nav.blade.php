@@ -26,7 +26,7 @@
             </ul>
         </li>
         <li class=""><a title="" href="#"><i class="fa fa-cog"></i> <span class="text">Settings</span></a></li>
-        <li class=""><a title="" href="/admin/auth/logout"><i class="icon icon-share-alt"></i> <span class="text">Logout</span></a>
+        <li class=""><a title="" href="/auth/logout"><i class="icon icon-share-alt"></i> <span class="text">Logout</span></a>
         </li>
     </ul>
 </div>

@@ -11,6 +11,10 @@ body {
   margin-top: 5px;
   font-size: 12px;
 }
+.btn-group .btn {
+  background-color: #E8E8E8;
+  border: 1px solid #D2D2D2;
+}
 .btn-group .active {
   color: #fff;
   background-color: #bd362f;
