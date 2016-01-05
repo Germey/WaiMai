@@ -2,6 +2,7 @@
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use App\Http\Requests\ConfigRequest;
 use App\Model\Config;
 use View, Redirect, Flash;
 use Illuminate\Http\Request;
@@ -45,7 +46,7 @@ class ConfigController extends Controller
         ]);
     }
 
-    public function postUpdate(Request $request)
+    public function postUpdate(ConfigRequest $request)
     {
         $configs = $request->all();
         foreach($configs as $key => $value) {

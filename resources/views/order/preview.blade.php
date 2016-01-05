@@ -31,11 +31,9 @@
                 <span class="number">{{ $total['number'] }}</span>
             </div>
         </div>
-
         <p class="title">您的位置</p>
 
         <div class="ui-form ui-border-t" id="map">
-
         </div>
         <div id="location-info">
 
