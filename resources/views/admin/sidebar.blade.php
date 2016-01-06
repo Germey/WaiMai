@@ -12,7 +12,7 @@
                         @foreach ($menu_item['children'] as $child)
                             <li>
                                 <a href="{{ URL('admin/'.($menu_item['path']?($menu_item['path'].'/'):'').$child['path']) }}">
-                                    <i class="fa fa-{{ $child['icon'] }}"></i>
+                                    <i class="icon icon-{{ $child['icon'] }}"></i>
                                     <span>{{ $child['text'] }}</span>
                                 </a>
                             </li>
