@@ -33,8 +33,8 @@
                                         <td class="text-center span2">{{ $product->name }}</td>
                                         <td class="text-center span2"><img src="{{ $product->image }}"></td>
                                         <td class="text-center span2">{{ $product->detail }}</td>
-                                        <td class="text-center span1">{{ $product->price }}</td>
-                                        <td class="text-center span1">{{ $product->discount }}</td>
+                                        <td class="text-center span1">{{ number_format($product->price, $price_format, '.', '') }}</td>
+                                        <td class="text-center span1">{{ number_format($product->discount, 2, '.', '') }}</td>
                                         <td class="text-center span1">{{ $product->getUnit->name }}</td>
                                         <td class="text-center span1">{{ $product->max }}</td>
                                         <td class="text-center span1">1</td>

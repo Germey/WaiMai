@@ -7,7 +7,6 @@ class Product extends Model
 {
 
 
-
     use SoftDeletes;
 
     /**
@@ -20,7 +19,7 @@ class Product extends Model
     /**
      * The attributes that are mass assignable.
      *
-     * @var array2s
+     * @var arrays
      */
     protected $fillable = ['name', 'image', 'price', 'unit', 'discount', 'remain', 'detail', 'max'];
 

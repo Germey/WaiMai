@@ -48,7 +48,7 @@
                                     </div>
                                 </div>
                                 <div class="pagination pull-right">
-                                    {!!  $units->setPath('/admin/product')->render() !!}
+                                    {!!  $units->setPath('/admin/unit')->render() !!}
                                 </div>
                             </div>
                         </div>

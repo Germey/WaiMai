@@ -59,8 +59,8 @@ class SidebarServiceProvider extends ServiceProvider {
      * @param $request
      */
     private function getRequestPath($request) {
-        $uri = $request->server()['REQUEST_URI'];
-        $paths = explode('/', $uri);
+        $path = parse_url($request->server()['REQUEST_URI'])['path'];
+        $paths = explode('/', $path);
         if (in_array('admin', $paths)) {
             $requestPath = array_slice($paths, 2);
             return $requestPath;

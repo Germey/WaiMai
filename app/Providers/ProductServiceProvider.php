@@ -50,11 +50,12 @@ class ProductServiceProvider extends ServiceProvider
      */
     private function composePriceFormat()
     {
-        View::composer('product.list', function ($view) {
+        View::composer(['product.list', 'product.index'], function ($view) {
             $view->with([
                 'price_format' => $this->getConfigValueByKey('price_format')
             ]);
         });
+
     }
 
 

@@ -47,7 +47,7 @@ class OrderServiceProvider extends ServiceProvider
      */
     private function composePriceFormat()
     {
-        View::composer('order.preview', function ($view) {
+        View::composer(['order.preview', 'order.index'], function ($view) {
             $view->with([
                 'price_format' => $this->getConfigValueByKey('price_format')
             ]);

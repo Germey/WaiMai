@@ -13,14 +13,15 @@
 
     //Route::get('/', 'WelcomeController@index');
 
+    Route::model('product', 'App\Model\Product');
+    Route::model('unit', 'App\Model\Unit');
+
     Route::get('home', 'HomeController@index');
 
     Route::controllers([
         'auth' => 'AuthController',
         'password' => 'PasswordController',
     ]);
-
-    Route::model('product', 'App\Model\Product');
 
     Route::get('list', 'ProductController@lists');
 

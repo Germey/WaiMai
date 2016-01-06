@@ -2,7 +2,7 @@
 
 @section('main')
     <div class="main">
-        @include('support.editable')\
+        @include('support.editable')
         <div class="container-fluid">
             <div class="row-fluid">
                 <div class="span12">
@@ -37,7 +37,7 @@
                                                 <p>{{ $item['name'].$item['number'].$item['unit'] }}</p>
                                             @endforeach
                                         </td>
-                                        <td class="text-center span1">{{ $order->price }}</td>
+                                        <td class="text-center span1">{{ number_format($order->price, $price_format, '.', '') }}</td>
                                         <td class="text-center span1">{{ $order->payStatus->name }}</td>
                                         <td class="text-center span1">{{ $order->name }}</td>
                                         <td class="text-center span2">{{ $order->location.$order->street_number }}</td>
