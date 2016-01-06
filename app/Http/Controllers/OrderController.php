@@ -124,7 +124,7 @@ class OrderController extends Controller
             $item['index'] = $o['index'];
             $item['name'] = $product->name;
             $item['price'] = $product->price * $product->discount * $o['number'];
-            $item['unit'] = $product->unit;
+            $item['unit'] = $product->getUnit->name;
             $item['number'] = $o['number'];
             array_push($items, $item);
             $total['price'] += $item['price'];

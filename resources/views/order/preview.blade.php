@@ -46,7 +46,7 @@
                 <label class="ui-border-r">
                     姓名
                 </label>
-                <input type="text" name="name" placeholder="请填写您的姓名"/>
+                {!! Form::text('name', null, ['placeholder' => '请填写您的姓名']) !!}
                 <a class="ui-icon-close">
                 </a>
             </div>
@@ -54,7 +54,7 @@
                 <label class="ui-border-r">
                     备注
                 </label>
-                <input type="text" name="remark" placeholder="写下您想说的话"/>
+                {!! Form::text('remark', null, ['placeholder' => '写下您想说的话']) !!}
                 <a class="ui-icon-close">
                 </a>
             </div>
@@ -62,13 +62,13 @@
                 <label class="ui-border-r">
                     地址
                 </label>
-                <input type="text" name="location" placeholder="请填写地址"/>
+                {!! Form::text('location', null, ['placeholder' => '请填写地址']) !!}
             </div>
             <div class="ui-form-item ui-form-item-l ui-border-b">
                 <label class="ui-border-r">
                     门牌号
                 </label>
-                <input type="text" name="street_number" placeholder="请输入您的门牌号,如XX小区（村）XX号"/>
+                {!! Form::text('street_number', null, ['placeholder' => '请输入您的门牌号,如XX小区（村）XX号']) !!}
                 <a class="ui-icon-close">
                 </a>
             </div>
@@ -76,14 +76,12 @@
                 <label class="ui-border-r">
                     手机
                 </label>
-                <input type="text" name="phone" placeholder="请输入手机号码"/>
+                {!! Form::text('phone', null, ['placeholder' => '请输入手机号码']) !!}
                 <a class="ui-icon-close">
                 </a>
             </div>
             <div class="ui-btn-wrap">
-                <a class="ui-btn-lg ui-btn-danger" id="submit">
-                    提交订单
-                </a>
+                {!! Form::button('提交订单', ['class' => 'ui-btn-lg ui-btn-danger', 'id' => 'sub']) !!}
             </div>
         </div>
         {!! Form::close() !!}

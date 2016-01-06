@@ -71,7 +71,7 @@ $(function() {
         $('#order-preview').on('click', '.ui-icon-close', function() {
             $(this).siblings('input').val('');
         });
-        $('#order-preview').on('click', '#submit', function() {
+        $('#order-preview').on('click', '#sub', function() {
             $('#order-submit-form').judgeInfo({
                 'name': ['required'],
                 'location': ['required'],
@@ -81,10 +81,9 @@ $(function() {
                 'name': '您的姓名',
                 'phone': '手机号',
                 'location': '地址',
-                'street_nubmer': '门牌号',
+                'street_number': '门牌号',
             }, function() {
                 $('#order-submit-form').submit();
-                //console.log('no_error');
             });
         });
     }
